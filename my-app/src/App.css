@@ -2,19 +2,10 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
-  background-color: #282c34;
+/* background-color: conic-gradient(from -1.38deg at 69.06% 37.26%, #813772 0deg, #B82601 76.88deg, #062F4F 180deg, #813772 360deg); */
+  border: 1px solid #000000;
+  background: conic-gradient(from -1.38deg at 69.06% 37.26%, #813772 0deg, #B82601 76.88deg, #062F4F 180deg, #813772 360deg);
   min-height: 100vh;
   display: flex;
   flex-direction: column;

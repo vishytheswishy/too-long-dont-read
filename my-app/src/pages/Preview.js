@@ -10,14 +10,12 @@ const Success = () => {
         <header className="containers">
           <h1 className="tagline container is-large">
             <b>
-              Congrats!
+              Under Construction ⚙️👷👷!
+              
             </b>
-          </h1>
-          <br></br>
-          <div class="content container is-centered is-large">
-            You will now be receiving a confirmation email with  a  password for future logins/updates. We look forward to shortening your <b>time to read! </b>
-          </div>
-          <br></br>
+            </h1>
+            <br></br>
+            an email example will be here for future reference
         </header>
         </div>
       </div>

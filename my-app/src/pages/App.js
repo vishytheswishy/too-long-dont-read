@@ -18,7 +18,7 @@ const App = () => {
           <div class="content container is-centered is-large">
             <b>too long; didn’t read</b> is a newsletter fully customized to
             your stock portfolio. We analyze thousands of news articles for you
-            and deliver them into your inbox; with full sentiment analysis and
+            and deliver them into your inbox with full sentiment analysis and
             concise summaries for quick content delivery. We also offer tools to
             summarize anything.
           </div>

@@ -14,9 +14,9 @@ const TLDRit = () => {
               </b>
             </h1>
             <div class="content container is-centered is-normal">
-              <b>We understand that reading things can be time consuming.</b> <br></br>
-              Paste or upload anything, from articles to entire books. And we
-              will reduce, summarize, and read your text for you!
+              <b> We understand that reading things and writing abstracts/summaries can be time consuming.</b> <br></br>
+              Paste or upload anything, from articles to entire books and we
+              will reduce, summarize, and read your text for you! 
             </div>
             <textarea
               class="textarea"
@@ -56,8 +56,9 @@ const TLDRit = () => {
               </div>
             </div>
           </div>
+          <br></br>
           <div>
-            <button id="myBtn" class="button is-primary is-large">
+            <button id="myBtn" class="button is-primary is-normal">
               Summarize your text!
             </button>
           </div>

@@ -5,6 +5,7 @@ import Registration from './pages/Registration';
 import App from './pages/App';
 import Success from './pages/Success';
 import TLDRit from './pages/TLDRit';
+import Preview from './pages/Preview';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
@@ -17,6 +18,7 @@ root.render(
         <Route path="/registration" element={<Registration/>}/>
         <Route path="/success" element={<Success/>}/>
         <Route path="/TLDRit" element={<TLDRit/>}/>
+        <Route path="/preview" element={<Preview/>}/>
       </Routes>
     </BrowserRouter>
 );

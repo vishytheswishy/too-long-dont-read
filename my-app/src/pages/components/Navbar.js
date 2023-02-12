@@ -76,7 +76,7 @@ const Navbar = () => {
               </a>
 
               <div class="navbar-dropdown is-dark is-right is-arrowless">
-                <a class="navbar-item is-dark">portfolio portal</a>
+                <a href="/" class="navbar-item is-dark">home</a>
                 <a href="/tldrit" class="navbar-item">tldr it!</a>
                 <a href="/preview" class="navbar-item">preview</a>
                 <a href="/today" class="navbar-item">daily market analysis</a>

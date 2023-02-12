@@ -38,7 +38,7 @@ const App = () => {
               </span>
             </div>
             <div class="control">
-              <a class="blk button is-rounded ">try it!🚀</a>
+              <a href= "/registration" class="blk button is-rounded ">try it!🚀</a>
             </div>
           </div>
         </div>

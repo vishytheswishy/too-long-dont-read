@@ -48,7 +48,7 @@ const Navbar = () => {
         <div id="navbarBasicExample" class="navbar-menu">
           <div class="navbar-start">
             <a class="navbar-item">|</a>
-            <a class="navbar-item is-small">
+            <a href = "/tldrit" class="navbar-item is-small">
               <p class="slogan">
                 {" "}
                 shortening your time <br></br>
@@ -77,13 +77,13 @@ const Navbar = () => {
 
               <div class="navbar-dropdown is-dark is-right is-arrowless">
                 <a class="navbar-item is-dark">portfolio portal</a>
-                <a class="navbar-item">tldr it!</a>
-                <a class="navbar-item">preview</a>
-                <a class="navbar-item">daily market analysis</a>
-                <a class="navbar-item">blogs</a>
-                <a class="navbar-item">about us</a>
+                <a href="/tldrit" class="navbar-item">tldr it!</a>
+                <a href="/preview" class="navbar-item">preview</a>
+                <a href="/today" class="navbar-item">daily market analysis</a>
+                <a href="/blogs" class="navbar-item">blogs</a>
+                <a href="/about-us"class="navbar-item">about us</a>
                 <hr class="navbar-divider"></hr>
-                <a class="navbar-item">report an issue</a>
+                <a href="/issues" class="navbar-item">report an issue</a>
               </div>
             </div>
           </div>

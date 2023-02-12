@@ -56,7 +56,7 @@ const Registration = () => {
           <div class="columns">
             <div class="column">
               <div class="control column">
-                <a class="blk button is-primary ">Submit your stock picks 🚀</a>
+                <a href="/success" class="blk button is-primary ">Submit your stock picks 🚀</a>
               </div>
             </div>
           </div>

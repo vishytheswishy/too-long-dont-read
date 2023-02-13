@@ -3,8 +3,8 @@ import { useState } from "react";
 
 const Navbar = () => {
   return (
-    <div class="tldr">
-      <head>
+    <div className= "tldr" lang="en-US">
+      <header>
         <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
@@ -19,14 +19,14 @@ const Navbar = () => {
           href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
           rel="stylesheet"
         />
-      </head>
+      </header>
       <nav
-        class="navbar is-dark"
+        className="navbar is-dark"
         role="navigation"
         aria-label="main navigation"
       >
-        <div class="navbar-brand">
-          <a class="navbar-item" href="/">
+        <div className="navbar-brand">
+          <a className="navbar-item" href="/">
             <b>
               too long;<br></br>didn't read
             </b>
@@ -34,7 +34,7 @@ const Navbar = () => {
 
           <a
             role="button"
-            class="navbar-burger"
+            className="navbar-burger"
             aria-label="menu"
             aria-expanded="false"
             data-target="navbarBasicExample"
@@ -45,11 +45,11 @@ const Navbar = () => {
           </a>
         </div>
 
-        <div id="navbarBasicExample" class="navbar-menu">
-          <div class="navbar-start">
-            <a class="navbar-item">|</a>
-            <a href = "/tldrit" class="navbar-item is-small">
-              <p class="slogan">
+        <div id="navbarBasicExample" className="navbar-menu">
+          <div className="navbar-start">
+            <a className="navbar-item">|</a>
+            <a href = "/tldrit" className="navbar-item is-small">
+              <p className="slogan">
                 {" "}
                 shortening your time <br></br>
                 to read.
@@ -57,33 +57,32 @@ const Navbar = () => {
             </a>
           </div>
 
-          <div class="navbar-end is-right">
-            <div class="navbar-item is-right has-dropdown is-arrowless is-hoverable is-dark">
-              <a class="navbar-link is-arrowless">
-                <p class>
+          <div className="navbar-end is-right">
+            <div className="navbar-item is-right has-dropdown is-arrowless is-hoverable is-dark">
+              <a className="navbar-link is-arrowless">
+
                   <div>
-                    <div class="br">
+                    <div className="br">
                       <b>...</b>
                     </div>
-                    <div class="br">
+                    <div className="br">
                       <b>...</b>
                     </div>
-                    <div class="br">
+                    <div className="br">
                       <b>...</b>
                     </div>
                   </div>
-                </p>
               </a>
 
-              <div class="navbar-dropdown is-dark is-right is-arrowless">
-                <a href="/" class="navbar-item is-dark">home</a>
-                <a href="/tldrit" class="navbar-item">tldr it!</a>
-                <a href="/preview" class="navbar-item">preview</a>
-                <a href="/today" class="navbar-item">daily market analysis</a>
-                <a href="/blogs" class="navbar-item">blogs</a>
-                <a href="/about-us"class="navbar-item">about us</a>
-                <hr class="navbar-divider"></hr>
-                <a href="/issues" class="navbar-item">report an issue</a>
+              <div className="navbar-dropdown is-dark is-right is-arrowless">
+                <a href="/" className="navbar-item is-dark">home</a>
+                <a href="/tldrit" className="navbar-item">tldr it!</a>
+                <a href="/preview" className="navbar-item">preview</a>
+                <a href="/today" className="navbar-item">daily market analysis</a>
+                <a href="/blogs" className="navbar-item">blogs</a>
+                <a href="/about-us"className="navbar-item">about us</a>
+                <hr className="navbar-divider"></hr>
+                <a href="/issues" className="navbar-item">report an issue</a>
               </div>
             </div>
           </div>

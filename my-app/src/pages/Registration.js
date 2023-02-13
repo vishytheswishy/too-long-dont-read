@@ -1,14 +1,18 @@
 import "./App.css";
 import Modal from "./components/Modal";
 import Navbar from "./components/Navbar.js";
-
+import { useLocation } from "react-router-dom";
 const Registration = () => {
   // Get the modal
+  const location = useLocation(); 
+  window.onload = function(){ 
+    // your code 
+  console.log(location.state.email);
   var modal = document.getElementById("myModal");
 
   // Get the button that opens the modal
   var btn = document.getElementById("myBtn");
-
+  console.log(btn);
   // Get the <span> element that closes the modal
   var span = document.getElementsByClassName("close")[0];
 
@@ -29,76 +33,78 @@ const Registration = () => {
       modal.style.display = "none";
     }
   };
+};
   return (
-    <div class="tldr">
+    <body className="tldr">
       <Navbar />
-      <div class="App-header containers">
-        <div class="Registration container">
-          <nav class="panel is-dark">
+      <div className="App-header containers">
+        <div className="Registration container">
+          
+          <nav className="panel is-dark">
             <p
               panel-heading-background-color="black"
-              class="panel-heading is-dark"
+              className="panel-heading is-dark"
             >
               Create your own portfolio
             </p>
-            <div class="panel-block">
-              <p class="control has-icons-left">
-                <input class="input" type="text" placeholder="Search" />
-                <span class="icon is-left">
-                  <i class="fas fa-search" aria-hidden="true"></i>
+            <div className="panel-block">
+              <p className="control has-icons-left">
+                <input className="input" type="text" placeholder="Search" />
+                <span className="icon is-left">
+                  <i className="fas fa-search" aria-hidden="true"></i>
                 </span>
               </p>
             </div>
-            <label class="panel-block">
+            <label className="panel-block">
               <input type="checkbox" />
               <p font-color="white">$TSLA</p>
             </label>
-            <label class="panel-block">
+            <label className="panel-block">
               <input type="checkbox" />
               $GOOGL
             </label>
-            <label class="panel-block">
+            <label className="panel-block">
               <input type="checkbox" />
               $AAPL
             </label>
-            <label class="panel-block">
+            <label className="panel-block">
               <input type="checkbox" />
               $META
             </label>
-            <div class="column">
+            <div className="column">
               <a>
                 Note*: Hitting submit with nothing <br></br>selected will select
                 all stocks
               </a>
             </div>
           </nav>
-          <div class="field">
-            <div class="control">
-              <label class="checkbox">
+          <div className="field">
+            <div className="control">
+              <label className="checkbox">
                 <input type="checkbox" /> I agree to the{" "}
-                <button id="myBtn">terms and conditions</button>
+                <button className="is-primary" id="myBtn">Terms and Conditions</button>
               </label>
             </div>
           </div>
-          <div id="myModal" class="modal">
-            <div class="modal-content">
-              <span class="close">&times;</span>
-              <p class= "blk"> <b>Terms and Conditions </b></p>
+          <div id="myModal" className="modal">
+            <div className="modal-content">
+              <span className="close">&times;</span>
+              <p className= "blk"> <b>Terms and Conditions </b></p>
               <Modal/>
             </div>
           </div>
-          <div class="columns">
-            <div class="column">
-              <div class="control column">
-                <a href="/success" class="blk button is-primary ">
-                  Submit your stock picks 🚀
+          <div className="columns">
+            <div className="column">
+              <div className="control column">
+                <a href="/success" className="blk button is-primary ">
+                  Send your newsletter to {location.state.email} 🚀
                 </a>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </body>
   );
 };
 

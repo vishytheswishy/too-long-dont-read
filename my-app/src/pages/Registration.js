@@ -2,7 +2,8 @@ import "./App.css";
 import Modal from "./components/Modal";
 import Navbar from "./components/Navbar.js";
 import { useLocation } from "react-router-dom";
-let terms = true;
+let terms = false;
+var listOfStocks = [];
 const Registration = () => {
   // Get the modal
   const location = useLocation();
@@ -126,7 +127,7 @@ const Registration = () => {
           <div className="columns">
             <div className="column">
               <div  className="control column">
-                <button id="submitNewsletter" disabled = {terms} href="/success"  className="blk button is-primary ">
+                <button id="submitNewsletter" disabled href="/success"  className="blk button is-primary ">
                   Send your newsletter to {location.state.email} 🚀
                 </button>
               </div>

@@ -2,27 +2,83 @@ import "./App.css";
 import Modal from "./components/Modal";
 import Navbar from "./components/Navbar.js";
 import { useLocation } from "react-router-dom";
-let terms = false;
-var listOfStocks = [];
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+
+var listOfStocks = [
+  { name: "$ TSLA", index: 0 },
+  { name: "$ GOOGL", index: 1 },
+  { name: " $ AMZN", index: 2 },
+  { name: "$ S&P500", index: 3 },
+  { name: "$ NFLX", index: 4 },
+  { name: "$ AAPL", index: 5 },
+  { name: "$ NVDA", index: 6 },
+  { name: "$ AMD", index: 7 },
+  { name: "$ META", index: 8 },
+];
+
 const Registration = () => {
-  // Get the modal
+  const navigate = useNavigate();
+  function ClickEvent() {
+    navigate("/success", {});
+  }
+  let payload = [];
+  // logic for adding and removing stocks in the frontend
+  const [checkedState, setCheckedState] = useState(
+    new Array(listOfStocks.length).fill(false)
+  );
+
+  const handleOnChange = (position) => {
+    const updatedCheckedState = checkedState.map((item, index) =>
+      index === position ? !item : item
+    );
+    setCheckedState(updatedCheckedState);
+  };
+
+  // logic for adding and removing stocks in the frontend
+  // for disabling the submit button
+
+  const [state, setState] = useState(true);
   const location = useLocation();
 
   function termsAreEnabled() {
-    if (terms === false){
-      console.log("false button now enabled");
-      terms = true;
-      document.getElementById("submitNewsletter").disabled = false;
-    } else {
-      console.log("true button now disabled");
-      terms = false;
-      document.getElementById("submitNewsletter").disabled = true;
-    }
+    setState(false);
+    document.getElementById("termsAndConditions").disabled = true;
   }
+
+  function sendNewsletter() {
+    console.log(checkedState);
+
+    for (let i = 0; i < checkedState.length; i++) {
+      if (checkedState[i]) {
+        payload.push(listOfStocks[i]["name"]);
+      }
+    }
+    // make API call here
+    payload = [];
+    // navigate to success page or call error message
+    ClickEvent();
+  }
+
+  // function search() {
+  //   var input, filter, ul, li, a, i, txtValue;
+  //   input = document.getElementById("myInput");
+  //   filter = input.value.toUpperCase();
+  //   li = document.getElementsByTagName("li");
+  //   for (i = 0; i < li.length; i++) {
+  //     a = li[i];
+  //     txtValue = a.textContent || a.innerText;
+  //     if (txtValue.toUpperCase().indexOf(filter) > -1) {
+  //       li[i].style.display = "";
+  //     } else {
+  //       li[i].style.display = "none";
+  //     }
+  //   }
+  // }
   window.onload = function () {
     // your code
     console.log(location.state.email);
-    
+
     var modal = document.getElementById("myModal");
 
     // Get the button that opens the modal
@@ -61,42 +117,42 @@ const Registration = () => {
             >
               Create your own portfolio
             </p>
-            {/* <div className="panel-block"> */}
-              {/* <p className="control has-icons-left">
-                <input className="input" type="text" placeholder="Search" />
+            {/* <div className="panel-block">
+              <p className="control has-icons-left">
+                <input
+                  id= "myInput"
+                  className="input"
+                  type="text"
+                  placeholder="Search"
+                  // onkeyup={search()}
+                />
                 <span className="icon is-left">
                   <i className="fas fa-search" aria-hidden="true"></i>
                 </span>
-              </p> */}
-            {/* </div> */}
-            <label className="panel-block">
-              <input type="checkbox" />
-              <p font-color="white">$TSLA</p>
-            </label>
-            <label className="panel-block">
-              <input type="checkbox" />
-              $ GOOGL
-            </label>
-            <label className="panel-block">
-              <input type="checkbox" />
-              $ AMZN
-            </label>
-            <label className="panel-block">
-              <input type="checkbox" />
-              $ S&P500
-            </label>
-            <label className="panel-block">
-              <input type="checkbox" />
-              $ AAPL
-            </label>
-            <label className="panel-block">
-              <input type="checkbox" />
-              $ NFLX
-            </label>
-            <label className="panel-block">
-              <input type="checkbox" />
-              $ META
-            </label>
+              </p>
+            </div> */}
+            <ul className="toppings-list">
+              {listOfStocks.map(({ name }, index) => {
+                return (
+                  <li key={index}>
+                    <label
+                      className="panel-block"
+                      htmlFor={`custom-checkbox-${index}`}
+                    >
+                      <input
+                        type="checkbox"
+                        id={`custom-checkbox-${index}`}
+                        name={name}
+                        value={name}
+                        checked={checkedState[index]}
+                        onChange={() => handleOnChange(index)}
+                      />
+                      {name}
+                    </label>
+                  </li>
+                );
+              })}
+            </ul>
             <div className="column">
               <a className="is-size-7">
                 Note*: Hitting submit with nothing selected will select all
@@ -107,7 +163,12 @@ const Registration = () => {
           <div className="field">
             <div className="control">
               <label className="checkbox">
-                <input id="termsAndConditions" onClick={termsAreEnabled} type="checkbox" /> I agree to the{" "}
+                <input
+                  id="termsAndConditions"
+                  onClick={termsAreEnabled}
+                  type="checkbox"
+                />{" "}
+                I agree to the{" "}
                 <button className="buttonlink is-size-6" id="myBtn">
                   Terms and Conditions
                 </button>
@@ -126,8 +187,13 @@ const Registration = () => {
           </div>
           <div className="columns">
             <div className="column">
-              <div  className="control column">
-                <button id="submitNewsletter" disabled href="/success"  className="blk button is-primary ">
+              <div className="control column">
+                <button
+                  id="myBtn"
+                  disabled={state}
+                  onClick={sendNewsletter}
+                  className="blk button is-primary "
+                >
                   Send your newsletter to {location.state.email} 🚀
                 </button>
               </div>

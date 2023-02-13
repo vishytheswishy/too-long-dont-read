@@ -72,8 +72,8 @@ const Registration = () => {
               $META
             </label>
             <div className="column">
-              <a>
-                Note*: Hitting submit with nothing <br></br>selected will select
+              <a className="is-size-7">
+                Note*: Hitting submit with nothing selected will select
                 all stocks
               </a>
             </div>

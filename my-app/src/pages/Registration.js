@@ -2,12 +2,26 @@ import "./App.css";
 import Modal from "./components/Modal";
 import Navbar from "./components/Navbar.js";
 import { useLocation } from "react-router-dom";
+let terms = true;
 const Registration = () => {
   // Get the modal
   const location = useLocation();
+
+  function termsAreEnabled() {
+    if (terms === false){
+      console.log("false button now enabled");
+      terms = true;
+      document.getElementById("submitNewsletter").disabled = false;
+    } else {
+      console.log("true button now disabled");
+      terms = false;
+      document.getElementById("submitNewsletter").disabled = true;
+    }
+  }
   window.onload = function () {
     // your code
     console.log(location.state.email);
+    
     var modal = document.getElementById("myModal");
 
     // Get the button that opens the modal
@@ -46,29 +60,41 @@ const Registration = () => {
             >
               Create your own portfolio
             </p>
-            <div className="panel-block">
-              <p className="control has-icons-left">
+            {/* <div className="panel-block"> */}
+              {/* <p className="control has-icons-left">
                 <input className="input" type="text" placeholder="Search" />
                 <span className="icon is-left">
                   <i className="fas fa-search" aria-hidden="true"></i>
                 </span>
-              </p>
-            </div>
+              </p> */}
+            {/* </div> */}
             <label className="panel-block">
               <input type="checkbox" />
               <p font-color="white">$TSLA</p>
             </label>
             <label className="panel-block">
               <input type="checkbox" />
-              $GOOGL
+              $ GOOGL
             </label>
             <label className="panel-block">
               <input type="checkbox" />
-              $AAPL
+              $ AMZN
             </label>
             <label className="panel-block">
               <input type="checkbox" />
-              $META
+              $ S&P500
+            </label>
+            <label className="panel-block">
+              <input type="checkbox" />
+              $ AAPL
+            </label>
+            <label className="panel-block">
+              <input type="checkbox" />
+              $ NFLX
+            </label>
+            <label className="panel-block">
+              <input type="checkbox" />
+              $ META
             </label>
             <div className="column">
               <a className="is-size-7">
@@ -80,7 +106,7 @@ const Registration = () => {
           <div className="field">
             <div className="control">
               <label className="checkbox">
-                <input type="checkbox" /> I agree to the{" "}
+                <input id="termsAndConditions" onClick={termsAreEnabled} type="checkbox" /> I agree to the{" "}
                 <button className="buttonlink is-size-6" id="myBtn">
                   Terms and Conditions
                 </button>
@@ -99,10 +125,10 @@ const Registration = () => {
           </div>
           <div className="columns">
             <div className="column">
-              <div className="control column">
-                <a href="/success" className="blk button is-primary ">
+              <div  className="control column">
+                <button id="submitNewsletter" disabled = {terms} href="/success"  className="blk button is-primary ">
                   Send your newsletter to {location.state.email} 🚀
-                </a>
+                </button>
               </div>
             </div>
           </div>

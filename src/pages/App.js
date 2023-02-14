@@ -2,21 +2,30 @@ import "./App.css";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Navbar from "./components/Navbar.js";
+import validator from "validator";
+
 const App = () => {
   const navigate = useNavigate();
+
+  const [emailError, setEmailError] = useState("");
   function ClickEvent() {
     navigate("/registration", {
       state: {
-        email: document.getElementById("emailInput").value
-      }
+        email: document.getElementById("emailInput").value,
+      },
     });
   }
-  window.onload = function () { 
+
+  window.onload = function () {
     function stateHandle() {
-      if (document.getElementById("emailInput").value === "") {
-        button.disabled = true;
-      } else {
+      console.log(
+        validator.isEmail(document.getElementById("emailInput").value)
+      );
+      if (validator.isEmail(document.getElementById("emailInput").value)) {
         button.disabled = false;
+      } else {
+        setEmailError("invalid email!");
+        button.disabled = true;
       }
       console.log();
     }
@@ -34,7 +43,7 @@ const App = () => {
             <b>
               Analyze the stock market in <i> seconds.</i>
             </b>
-          </h1>
+          </h1> 
           <br></br>
           <div class="content container is-centered is-large">
             <b>too long; didn’t read</b> is a newsletter fully customized to
@@ -66,6 +75,16 @@ const App = () => {
               >
                 try it!🚀
               </button>
+              <div className="container">
+                <span
+                  className="level"
+                  style={{
+                    color: "red",
+                  }}
+                >
+                  {emailError}
+                </span>
+              </div>
             </div>
           </div>
         </div>

@@ -3,7 +3,8 @@ import Modal from "./components/Modal";
 import Navbar from "./components/Navbar.js";
 import { useLocation } from "react-router-dom";
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import axios from 'axios';
 
 var listOfStocks = [
   { name: "$ TSLA", index: 0 },
@@ -55,6 +56,19 @@ const Registration = () => {
       }
     }
     // make API call here
+    const data = {
+      email: location.state.email,
+      stocks: payload
+    };
+    axios.post('https://gw2lhvhtg4.execute-api.us-east-1.amazonaws.com/dev', data)
+      .then(response => {
+        console.log(response.data);
+        // Do something with the response
+      })
+      .catch(error => {
+        console.log(error);
+        // Handle error
+      });
     payload = [];
     // navigate to success page or call error message
     ClickEvent();

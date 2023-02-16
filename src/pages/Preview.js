@@ -6,18 +6,16 @@ const Success = () => {
   return (
     <div class="tldr">
       <Navbar />
-      <div class="App-header containers">
-        <div class="Registration container">
-          <header className="containers">
-            <div className="container">
-              <p className="is-centered is-one-fifth">Newsletter Preview:</p>
+      <div class="App-header ">
+        <div class="Registration ">
+          <div className="level">
+              
+            <div className="level-item">
               <img
                 src={require("./components/newsletter.png")}
-                width="450"
-                height="400"
               />
             </div>
-          </header>
+          </div>
         </div>
       </div>
     </div>

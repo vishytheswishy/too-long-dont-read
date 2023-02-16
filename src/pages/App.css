@@ -50,6 +50,11 @@
 }
 .tldr {
   font-family: "DM Sans";
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.tldr::-webkit-scrollbar {
+  display: none;
 }
 .bgcolor {
   background-color: #1e1e1e;

@@ -9,10 +9,11 @@ const Success = () => {
       <div class="App-header ">
         <div class="Registration ">
           <div className="level">
-              
             <div className="level-item">
               <img
                 src={require("./components/newsletter.png")}
+                width="800"
+                height="800"
               />
             </div>
           </div>

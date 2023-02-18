@@ -15,7 +15,7 @@ const Success = () => {
           </h1>
           <br></br>
           <div class="content container is-centered is-large">
-            You will now be receiving a confirmation email with  a  password for future logins/updates. We look forward to shortening your <b>time to read! </b>
+            You will now be receiving a confirmation email with a password for future logins/updates. We look forward to shortening your <b>time to read! </b>
           </div>
           <br></br>
         </header>

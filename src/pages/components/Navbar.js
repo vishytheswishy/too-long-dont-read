@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const Navbar = () => {
   return (
-    <div className= "tldr" lang="en-US">
+    <div className="tldr" lang="en-US">
       <header>
         <link
           rel="stylesheet"
@@ -48,7 +48,7 @@ const Navbar = () => {
         <div id="navbarBasicExample" className="navbar-menu">
           <div className="navbar-start">
             <a className="navbar-item">|</a>
-            <a href = "/tldrit" className="navbar-item is-small">
+            <a href="/tldrit" className="navbar-item is-small">
               <p className="slogan">
                 {" "}
                 shortening your time <br></br>
@@ -60,29 +60,40 @@ const Navbar = () => {
           <div className="navbar-end is-right">
             <div className="navbar-item is-right has-dropdown is-arrowless is-hoverable is-dark">
               <a className="navbar-link is-arrowless">
-
-                  <div>
-                    <div className="br">
-                      <b>...</b>
-                    </div>
-                    <div className="br">
-                      <b>...</b>
-                    </div>
-                    <div className="br">
-                      <b>...</b>
-                    </div>
+                <div>
+                  <div className="br">
+                    <b>...</b>
                   </div>
+                  <div className="br">
+                    <b>...</b>
+                  </div>
+                  <div className="br">
+                    <b>...</b>
+                  </div>
+                </div>
               </a>
 
               <div className="navbar-dropdown is-dark is-right is-arrowless">
-                <a href="/" className="navbar-item is-dark">home</a>
-                <a href="/tldrit" className="navbar-item">tldr it!</a>
-                <a href="/preview" className="navbar-item">preview</a>
-                <a href="/today" className="navbar-item">daily market analysis</a>
-                <a href="/blogs" className="navbar-item">blogs</a>
-                <a href="/about-us"className="navbar-item">about us</a>
-                <hr className="navbar-divider"></hr>
-                <a href="/issues" className="navbar-item">report an issue</a>
+                <a href="/" className="navbar-item is-dark">
+                  home
+                </a>
+                {/* <a href="/tldrit" className="navbar-item">
+                  tldr it!
+                </a> */}
+                <a href="/preview" className="navbar-item">
+                  preview
+                </a>
+                <a href="/today" className="navbar-item">
+                  daily market analysis
+                </a>
+                {/* <a href="/blogs" className="navbar-item">
+                  blogs
+                </a> */}
+                <a href="/about-us" className="navbar-item">
+                  about us
+                </a>
+                {/* <hr className="navbar-divider"></hr> */}
+                {/* <a href="/issues" className="navbar-item">report an issue</a> */}
               </div>
             </div>
           </div>

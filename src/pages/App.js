@@ -5,6 +5,8 @@ import Navbar from "./components/Navbar.js";
 import validator from "validator";
 
 const App = () => {
+  // To get the scroll position of current webpage
+
   const navigate = useNavigate();
 
   const [emailError, setEmailError] = useState("");
@@ -17,6 +19,8 @@ const App = () => {
   }
 
   window.onload = function () {
+    document.body.style.overflow = "hidden";
+    document.body.classList.add("no-scroll");
     function stateHandle() {
       console.log(
         validator.isEmail(document.getElementById("emailInput").value)
@@ -43,7 +47,7 @@ const App = () => {
             <b>
               Analyze the stock market in <i> seconds.</i>
             </b>
-          </h1> 
+          </h1>
           <br></br>
           <div class="content container is-centered is-large">
             <b>too long; didn’t read</b> is a newsletter fully customized to

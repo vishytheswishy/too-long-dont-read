@@ -45,7 +45,8 @@ const App = () => {
         <header className="containers">
           <h1 className="tagline container is-large">
             <b>
-              Analyze the stock market in <i> seconds.</i>
+              Analyze the stock market in <i>seconds</i>
+              <i className="blink">_</i>
             </b>
           </h1>
           <br></br>
@@ -53,8 +54,7 @@ const App = () => {
             <b>too long; didn’t read</b> is a newsletter fully customized to
             your stock portfolio. We analyze thousands of news articles for you
             and deliver them into your inbox with full sentiment analysis and
-            concise summaries for quick content delivery. We also offer tools to
-            summarize anything.
+            concise summaries.
           </div>
           <br></br>
         </header>
@@ -75,7 +75,7 @@ const App = () => {
               <button
                 id="submitButton"
                 onClick={ClickEvent}
-                class="blk button is-rounded "
+                class="is-primary button is-rounded "
               >
                 try it!🚀
               </button>

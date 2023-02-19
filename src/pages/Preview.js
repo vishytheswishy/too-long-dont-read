@@ -15,6 +15,32 @@ const Success = () => {
                 width="800"
                 height="800"
               />
+              <img
+                src={require("./components/hot.png")}
+                width="10"
+                height="10"
+              />
+
+              <img
+                src={require("./components/room_temperature.png")}
+                width="10"
+                height="10"
+              />
+              <img
+                src={require("./components/lukewarm.png")}
+                width="10"
+                height="10"
+              />
+              <img
+                src={require("./components/ice_cold.png")}
+                width="10"
+                height="10"
+              />
+              <img
+                src={require("./components/logo.png")}
+                width="10"
+                height="10"
+              />
             </div>
           </div>
         </div>

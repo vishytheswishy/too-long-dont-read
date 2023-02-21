@@ -1,0 +1,19 @@
+{
+  "date": "2-29-2023",
+  "summaries": [
+    {
+      "summary": {
+        "content": "Elon Musk agrees to..",
+        "name": "TSLA",
+        "sentiment": "Positive"
+      }
+    },
+    {
+      "summary": {
+        "content": "Andy Jassy suggest return to work policy amidst..",
+        "name": "AMZN",
+        "sentiment": "Positive"
+      }
+    }
+  ]
+}
